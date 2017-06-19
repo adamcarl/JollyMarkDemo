@@ -1,0 +1,142 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/all_bg"
+    android:orientation="vertical"
+    tools:context=".RMPrintActivity" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="65dp"
+        android:background="#ff444444"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:id="@+id/title_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_marginLeft="10.0dip"
+            android:text="热敏打印机演示"
+            android:textColor="#ffffff"
+            android:textSize="22sp" />
+
+        <Button
+            android:id="@+id/btn_Elock"
+            android:layout_width="120dp"
+            android:layout_height="65dp"
+            android:layout_marginTop="3dp"
+            android:text="开纸斗盖"
+            android:textSize="20sp" />
+
+        <Button
+            android:id="@+id/btn_backPaper"
+            android:layout_width="150dp"
+            android:layout_height="65dp"
+            android:layout_alignParentTop="true"
+            android:layout_toRightOf="@+id/btn_Elock"
+            android:background="@drawable/button_style"
+            android:text="@string/backPaper"
+            android:visibility="gone" />
+
+        <ImageView
+            android:id="@+id/imageView1"
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:layout_centerInParent="true"
+            android:src="@drawable/jmlogo" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1.0"
+        android:baselineAligned="false"
+        android:orientation="horizontal" >
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:orientation="vertical" >
+
+            <View
+                android:layout_width="4.0dip"
+                android:layout_height="fill_parent"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentLeft="true"
+                android:background="#ff73b8b8" />
+
+            <View
+                android:layout_width="4.0dip"
+                android:layout_height="fill_parent"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentRight="true"
+                android:background="#ff73b8b8" />
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="4.0dip"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentLeft="true"
+                android:background="#ff73b8b8" />
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="4.0dip"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentLeft="true"
+                android:background="#ff73b8b8" />
+
+            <Button
+                android:id="@+id/btn_Printtext"
+                android:layout_width="250dp"
+                android:layout_height="60dp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="30dp"
+                android:layout_marginTop="30dp"
+                android:text="字符打印样例"
+                android:textSize="20sp" />
+
+            <Button
+                android:id="@+id/btn_setting_BID"
+                android:layout_width="250dp"
+                android:layout_height="60dp"
+                android:layout_below="@+id/btn_Printtext"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="30dp"
+                android:text="图形打印示例"
+                android:textSize="20sp" />
+
+            <Button
+                android:id="@+id/btn_feedButton"
+                android:layout_width="250dp"
+                android:layout_height="60dp"
+                android:layout_below="@+id/btn_setting_BID"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="30dp"
+                android:text="@string/feedkPaper"
+                android:textSize="20sp" />
+            <Button
+                android:id="@+id/btn_open_cashbox"
+                android:layout_width="250dp"
+                android:layout_height="60dp"
+                android:layout_below="@+id/btn_feedButton"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="30dp"
+                android:text="开钱箱"
+                android:textSize="20sp" />
+            <Button
+                android:id="@+id/btn_Kill"
+                android:layout_width="250dp"
+                android:layout_height="60dp"
+                android:layout_below="@+id/btn_open_cashbox"
+                android:layout_centerHorizontal="true"
+                android:text="@string/exitProgram"
+                android:textSize="20sp" />
+        </RelativeLayout>
+    </LinearLayout>
+
+</LinearLayout>

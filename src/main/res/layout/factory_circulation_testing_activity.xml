@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+     xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="match_parent"
+    tools:context=".FICirculationTestingActivity" 
+    android:orientation="vertical">
+    
+
+    <RelativeLayout      
+         android:layout_width="fill_parent"
+         android:layout_height="65dp"
+         android:background="#ff444444"  
+      
+         android:orientation="horizontal" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_marginLeft="10.0dip"
+            
+            android:text="循环检测"
+            android:textSize="22sp" />
+
+        <Button
+            android:id="@+id/btnReturn_Circulation"
+
+            android:layout_width="150dp"
+            android:layout_height="65dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+             android:background="@drawable/button_style"
+            android:textSize="20sp"
+            android:text="返回" />
+    </RelativeLayout>
+    <RelativeLayout 
+        android:layout_width="match_parent" 
+        android:layout_height="match_parent" 
+        android:background="@drawable/scroll_fragment_back"  
+        android:layout_alignParentTop="true">
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentRight="true" >
+
+            <Button
+                android:id="@+id/btn_circulation_testingStart"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="59dp"
+                 android:background="@drawable/button_style"
+                android:text="循环检测开始"
+                android:textSize="20sp" />
+
+            <EditText
+                android:id="@+id/et_Display_circulation_testing"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_alignRight="@+id/btn_circulation_testingDown"
+                android:layout_marginBottom="117dp"
+                android:background="#fffaebda"
+                android:ems="10"
+                android:focusable="false"
+                android:padding="5.0dip"
+                android:text="尚未开始测试！" />
+
+            <Button
+                android:id="@+id/btn_circulation_testingDown"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/btn_circulation_testingStart"
+                android:layout_alignRight="@+id/btn_circulation_testingStart"
+                android:layout_below="@+id/btn_circulation_testingStart"
+                android:layout_marginTop="54dp"
+                 android:background="@drawable/button_style"
+                android:textSize="20sp" 
+                android:text="停止" />
+
+            <TextView
+                android:id="@+id/textView1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@+id/et_Display_circulation_testing"
+                android:layout_alignBottom="@+id/et_Display_circulation_testing"
+                android:layout_alignLeft="@+id/btn_circulation_testingDown"
+                android:layout_toLeftOf="@+id/et_Display_circulation_testing"
+                android:text="打印状态："
+                android:textSize="20sp" />
+
+        </RelativeLayout>
+       
+    </RelativeLayout>
+ </LinearLayout>
+
+

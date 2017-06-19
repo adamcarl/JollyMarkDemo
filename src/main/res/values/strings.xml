@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">AppName</string>
+    <string name="menu_settings">Settings</string>
+    <string name="backPaper">BackPaper</string>
+    <string name="feedkPaper">FeedPaper</string>
+    <string name="repeatFeed">RepeatPaper</string>
+    <string name="stopFeed">StopFeed</string>
+    <string name="functionSet">FunctionSet</string>
+    <string name="AutoFeedMode">AutoFeedMode</string>
+    <string name="title_activity_test">TitleTest</string>
+    <string name="CAPION">CAPION</string>
+    <string name="exitProgram">EXITPROG</string>
+     <string name="exitSet">EXITSET</string>
+     <string name="BID">BID</string>
+     <string name="checkSelf">CheckSelf</string>
+     <string name="checkBlack">CheckBlack</string>
+     <string name="setPrintRange76">PrintRange76mm</string>
+     <string name="setPrintRange57">PrintRange57mm</string>
+
+    <string name="setBidValue">SetBidValue</string>
+    <string name="resetPrinter">ResetPrinter</string>
+    <string name="initPrinterAll">InitPrinterAll</string>
+
+    <string name="setPrinterSpeed">SetPrinterSpeed</string>
+    <string name="setPrintPaparClass">SetPrinterPaperClass</string>
+
+    <string name="action_settings"></string>
+</resources>
