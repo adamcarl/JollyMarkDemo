@@ -16,72 +16,72 @@ public class RMPrinter {
 	private static String Error ;
 
 	/*********************************************************************
-	 * * 函数功能：热敏机芯字符打印示例
-	 *   如果需要打印小票，发送排版好的字符串即可
+	 * *Function Function: Thermal movement character printing example
+	* If you need to print a small ticket, send a good layout can be a string
 	 ********************************************************************* */
 	public static boolean printTextTest() {
 		
-		String testStr1 = "字符打印示例:\r\n";
-		String chinese = "中文字型测试"+ "\r\n";
+		String testStr1 = "Character print example:\r\n";
+		String chinese = "Chinese font test"+ "\r\n";
 		String english = "ENGLISH TEST"+ "\r\n";
-		Inialize();//初始化
-		setChineseNormal();//爱普生pos指令，标准大小中文字
+		Inialize();//initialization
+		setChineseNormal();//Epson pos instruction, standard size Chinese characters
 		
 		try {
 			boolean retnVale = printData(testStr1 );
 			if (!retnVale) {			 
 				return retnVale;
 			}
-			retnVale = printPos( get20to7f() );//打印ASCII码 从0x20到0x7F
+			retnVale = printPos( get20to7f() );//Print ASCII code from 0x20 to 0x7F
 			if (!retnVale) {			 
 				return retnVale;
 			}
 			feedOfLine(1);
-			retnVale = printPos( getHanZiA() );//打印汉子码表一小段汉子
+			retnVale = printPos( getHanZiA() );//Print the Chinese character code table for a short man
 			if (!retnVale) {			 
 				return retnVale;
 			}
 			feedOfLine(1);
 			
-			setEnglishSmall(); // 8*16 英文字体
+			setEnglishSmall(); // 8*16 English Fonts
 			retnVale = printData(english);
 			if (!retnVale) {			 
 				return retnVale;
 			}
 			
-			setEnglishNormal();  //12*24 英文字体
+			setEnglishNormal();  //12*24 English Fonts
 			retnVale = printData(english);
 			if (!retnVale) {			 
 				return retnVale;
 			}
 			
-			setChineseWide(); //倍宽字体
+			setChineseWide(); //Times wide font
 			retnVale = printData(chinese);
 			if (!retnVale) {			 
 				return retnVale;
 			}
 			
-			setChineseHigh(); //倍高字体
+			setChineseHigh(); //Times high font
 			retnVale = printData(chinese);
 			if (!retnVale) {			 
 				return retnVale;
 			}
 
-			setChineseWideHigh(); //倍宽倍高字体
+			setChineseWideHigh(); //Times the width of the high font
 			retnVale = printData(chinese);
 			if (!retnVale) {			 
 				return retnVale;
 			}
 			
-			setChineseNormal(); //恢复汉子标准字体
-			setEnglishNormal(); // 12*24 英文字体
+			setChineseNormal(); //Restore Chinese standard font
+			setEnglishNormal(); // 12*24 English Fonts
 		} catch (UnsupportedEncodingException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		return true;
 	}
-	//pos指令，初始化打印机
+	//Pos instruction to initialize the printer
 	public static void Inialize() {
 
 		byte SData[] = {(byte)0x1B,(byte)0x40}; 
@@ -92,10 +92,11 @@ public class RMPrinter {
 			e.printStackTrace();
 		}
 	}
-	//pos指令
+	//Pos instruction
 
 	/*********************************************************************
-	 * * 函数功能：设置打印机打印中文字体模式为标准大小中文字（常规字体） //标准pos指令
+	 * * Function function: set the printer to print Chinese font mode for the 
+	 standard size of the Chinese characters (regular font) / / standard pos instruction
 	 ********************************************************************* */
 
 	public static void setChineseNormal() {
@@ -109,7 +110,8 @@ public class RMPrinter {
 	}
 
 	/*********************************************************************
-	 * * 函数功能：设置打印机打印中文字体模式为中文倍宽字体（宽字体）//标准pos指令
+	 * * Function function: set the printer to print Chinese font mode for the Chinese 
+	 double width font (wide font) / / standard pos instruction
 	 ********************************************************************* */
 
 	public static void setChineseWide() {
@@ -123,7 +125,8 @@ public class RMPrinter {
 	}
 
 	/*********************************************************************
-	 * * 函数功能：设置打印机打印中文字体模式为倍高字体（长字体）//标准pos指令
+	 * * Function function: set the printer to print Chinese font mode for the high font (long font) 
+	 / / standard pos instruction
 	 ********************************************************************* */
 
 	public static void setChineseHigh() {
@@ -137,7 +140,8 @@ public class RMPrinter {
 	}
 
 	/*********************************************************************
-	 * * 函数功能：设置打印机打印中文字体模式为倍宽、倍高字体（大字体）//标准pos指令
+	 * *Function function: set the printer to print Chinese font mode for the width, 
+	 double the font (large font) / / standard pos instruction
 	 ********************************************************************* */
 
 	public static void setChineseWideHigh() {
@@ -151,7 +155,8 @@ public class RMPrinter {
 	}
 
 	/*********************************************************************
-	 * * 函数功能：设置打印机打印英文字体模式为标准字体  12*24  //标准pos指令
+	 * * Function function: set the printer to print English font mode for the standard 
+	 font 12 * 24 // standard pos instruction
 	 ********************************************************************* */
 
 	public static void setEnglishNormal() {
@@ -165,7 +170,8 @@ public class RMPrinter {
 	}
  
 	/*********************************************************************
-	 * * 函数功能：设置打印机打印英文字体模式为小号字体 8*16   //标准pos指令
+	 * * Function function: set the printer to print English font mode for the small 
+	 font 8 * 16 / / standard pos instruction
 	 ********************************************************************* */
 	
 	public static void setEnglishSmall() {
@@ -179,10 +185,10 @@ public class RMPrinter {
 	}
 
 	/*********************************************************************
-	 * * 函数功能：热敏机 字符打印 
-	 * * 入口参数：printData 排版后的字符串
-	 * * 返回值：    ret =true 成功
-	 * * 注释：如果需要打印小票，发送排版好的字符串即可
+	 * *Function Function: Thermal character character printing
+	 * * Entry parameters: printData typed string
+	 * * Return value: ret = true successful
+	 * * Note: If you need to print a small ticket, send a good layout can be a string
 	 ********************************************************************* */
 	public static boolean printData(String printData)
 			throws UnsupportedEncodingException {
@@ -194,7 +200,7 @@ public class RMPrinter {
 		if (ret) {
 			SData = printData.getBytes("GB2312");
 			ret = tmpUsbDev.WriteBuf(SData, SData.length);
-			//	ret = tmpUsbDev.WriteString(printData);//也可直接使用WriteString(String str)
+			//	ret = tmpUsbDev.WriteString(printData);//You can also use WriteString (String str)
 
 			if (!ret) {
 				getErr(tmpUsbDev);
@@ -205,9 +211,9 @@ public class RMPrinter {
 		return ret;
 	}
 	/*********************************************************************
-	 * * 函数功能：热敏机 字符打印 
-	 * * 入口参数：printData 排版后的字符串
-	 * * 返回值：    ret =true 成功
+	 * * Function Function: Thermal character character printing
+	 * * Entry parameters: printData typed string
+	 * * Return value: ret = true successful
 	 ********************************************************************* */
 	public static boolean printPos(byte[] sData)throws UnsupportedEncodingException {
 		UsbPrinter tmpUsbDev = new UsbPrinter(); 
@@ -224,7 +230,7 @@ public class RMPrinter {
 		return ret;
 	}
 	/*********************************************************************
-	 * * 函数功能：走纸若干行    //标准pos指令
+	 * * Function function: take a number of lines / standard pos instruction
 	 * @return 
 	 ********************************************************************* */
 	public static boolean feedOfLine(int lineNumber) {
@@ -244,7 +250,7 @@ public class RMPrinter {
 		return retnVale;
 	}
 	/*********************************************************************
-	 * * 函数功能：走纸若干行     使用enter代替pos指令  另一种换行方式
+	 * * Function function: take a number of lines using enter instead of the pos command another line
 	 ********************************************************************* */
 	public static boolean feedOfEnter(int line) {
 		String enter = "\r\n";
@@ -263,7 +269,7 @@ public class RMPrinter {
 	}
 	
 	/*********************************************************************
-	 * * 函数功能：图形打印函数
+	 * * Function Function: Graphic print function
 	 ********************************************************************* */
 	public static boolean printPicTest( Context mContext,String fileName ) {
 		UsbPrinter tmpUsbDev = new UsbPrinter(); 
@@ -274,7 +280,7 @@ public class RMPrinter {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		// 把图形文件转换成热门打印机能够识别的数据
+		// The graphics file into a popular printer can identify the data
 		Data_Bmp tmpDataBmp = null;
 		Bitmap bitmap = null;
 
@@ -288,7 +294,7 @@ public class RMPrinter {
 		if (ret > 0) {
 			BmpDataBuf = destStream.toByteArray();
 		}
-		// 打印图形
+		// Print graphics
 		boolean retnVale = false;
 		if (BmpDataBuf != null) {
 			
@@ -307,17 +313,17 @@ public class RMPrinter {
 
 	}
 	/*********************************************************************
-	 * * 函数功能：显示打印机错误函数
+	 * * Function: Displays the printer error function
 	 ********************************************************************* */
 	private static void getErr(UsbPrinter tmpUsbDev) {	
 		Error = tmpUsbDev.GetLastPrintErr();		
 	}
 	
-	//获取错误字符串
+	//Get the wrong string
 	public static String getErrorStr() {			 
 		return Error;		
 	}
-	//打印ASCII码 0x20到0x7f   作为演示使用
+	//Print ASCII code 0x20 to 0x7f for use as a demo
 	private static byte[]  get20to7f(){
 		 
 		byte[] SData = new byte[0x7f-0x20];
@@ -327,7 +333,7 @@ public class RMPrinter {
 		return SData;	
 
 	}
-	//打印GB字库 部分内容   作为演示使用
+	//Print the contents of the GB font section as a demo
 	private  static byte[] getHanZiA(){
 		byte[] SData = new byte[(0xfe - 0xA1)*2];
 
@@ -339,7 +345,7 @@ public class RMPrinter {
 		return SData;			
 	}
 	
-    //开纸斗盖
+    //Open the paper cover
 	public static boolean UnLock() {
 		
 		boolean retnVale = false;
@@ -349,7 +355,7 @@ public class RMPrinter {
 		return retnVale;
 	}
 	
-    //开钱箱
+    //Open money box
 	public static boolean UnLockOfCashBox() {
 		
 		boolean retnVale = false;
